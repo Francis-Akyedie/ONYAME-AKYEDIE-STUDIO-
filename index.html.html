@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Onyame Akyedie Studio | Printing, Painting & Graphic Design in Bolgatanga</title>
+  <meta name="description" content="Custom T-shirt printing, graphic design, painting, stamps, banners, posters and framing in Bolgatanga, Ghana. Order on WhatsApp.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="mylogo.png">
+
+  <!-- Link preview (WhatsApp/Facebook). Replace YOURDOMAIN with your real website address -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Onyame Akyedie Studio | Where Art Speaks Life">
+  <meta property="og:description" content="Printing, painting and graphic design in Bolgatanga, Ghana.">
+  <meta property="og:image" content="https://YOURDOMAIN/Branding.png">
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles for the NEW sections only. Your perfect.css still controls everything else. -->
+  <style>
+    img, video { max-width: 100%; height: auto; }
+    .x-section { padding: 4rem 0; background: #fff; }
+    #how { background: #FFF8E1; }
+    .x-wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .x-section h2 { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #3E2723; margin-bottom: 0.5rem; }
+    .x-section .subtitle { text-align: center; color: #666; margin-bottom: 2rem; }
+    #about { text-align: center; }
+    #about p { max-width: 700px; margin: 0 auto 1rem; }
+    .about-photo { max-width: 320px; border-radius: 10px; display: block; margin: 1rem auto 0; }
+    .x-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .x-box { background: #fff; border-radius: 10px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+    .x-box h3 { color: #3E2723; font-family: 'Playfair Display', serif; margin-bottom: 0.5rem; }
+    .service-card .x-price { color: #3E2723; font-weight: 700; font-size: 1rem; margin: 0.75rem 0; }
+    .x-order { display: inline-block; padding: 0.5rem 1.1rem; border-radius: 30px; background: #FFD700; color: #3E2723; text-decoration: none; font-weight: 600; transition: background .3s, color .3s; }
+    .x-order:hover { background: #3E2723; color: #FFD700; }
+    .x-also { text-align: center; color: #555; }
+    .x-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
+    .x-filters button { padding: 0.5rem 1.2rem; border-radius: 30px; border: 2px solid #0f9e99; background: transparent; color: #0f9e99; cursor: pointer; font: inherit; font-weight: 600; }
+    .x-filters button.active { background: #0f9e99; color: #fff; }
+    .x-videos { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1.5rem; }
+    .x-videos video { width: 100%; max-width: 400px; border-radius: 10px; }
+    .x-faq { max-width: 800px; margin: 0 auto; }
+    .x-faq details { background: #FFF8E1; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+    .x-faq summary { cursor: pointer; font-weight: 700; color: #3E2723; }
+    .x-faq p { margin-top: 0.5rem; }
+    .x-map iframe { width: 100%; height: 320px; border: 0; border-radius: 10px; margin-top: 2rem; }
+    .contact-info a { color: #0f9e99; }
+    .p3d { max-width: 800px; margin: 0 auto; }
+    .p3d-tabs, .p3d-colors { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1rem; }
+    .p3d-tabs button { padding: 0.5rem 1.2rem; border-radius: 30px; border: 2px solid #0f9e99; background: transparent; color: #0f9e99; cursor: pointer; font: inherit; font-weight: 600; }
+    .p3d-tabs button.active { background: #0f9e99; color: #fff; }
+    .p3d-stage { position: relative; height: 420px; background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 1rem; }
+    #p3d-canvas { width: 100%; height: 100%; display: block; touch-action: pan-y; cursor: grab; border-radius: 10px; }
+    .p3d-msg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; color: #666; }
+    .p3d-colors button { width: 34px; height: 34px; border-radius: 50%; border: 2px solid #bbb; cursor: pointer; padding: 0; }
+    .p3d-colors button.active { outline: 3px solid #0f9e99; outline-offset: 2px; }
+    #hero3d { display: none; width: 100%; height: 380px; }
+    .hero-image.on3d #hero3d { display: block; }
+    .hero-image.on3d img { display: none; }
+    .rv { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .rv.in { opacity: 1; transform: none; }
+    @media (max-width: 768px) { #hero3d { height: 320px; } .p3d-stage { height: 380px; } }
+    @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+    .story { display: none; position: relative; background: radial-gradient(circle at 70% 45%, #0f9e99 0%, #073f3c 70%); touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+    .story.on { display: block; }
+    .story-sticky { position: relative; height: 90vh; min-height: 560px; display: flex; align-items: center; overflow: hidden; }
+    #story-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .story-text { position: relative; z-index: 1; max-width: 440px; padding: 0 20px 0 6vw; color: #FFF8E1; transition: opacity 0.16s ease, transform 0.16s ease; }
+    .story-text.out { opacity: 0; transform: translateY(10px); }
+    .story-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.4rem); color: #FFD700; text-align: left; margin-bottom: 0.75rem; line-height: 1.15; }
+    .story-text p { margin-bottom: 1.25rem; font-size: 1.1rem; }
+    .story-dots { position: absolute; top: 18px; left: 0; right: 0; display: flex; justify-content: center; gap: 12px; z-index: 2; }
+    .story-dots button { width: 12px; height: 12px; border-radius: 50%; border: 0; padding: 0; background: rgba(255,248,225,0.35); cursor: pointer; transition: transform 0.2s ease, background 0.2s ease; }
+    .story-dots button.on { background: #FFD700; transform: scale(1.3); }
+    .story-hint { position: absolute; top: 42px; left: 0; right: 0; text-align: center; color: #FFF8E1; z-index: 1; font-size: 0.95rem; transition: opacity 0.4s ease; }
+    .story-nav { position: absolute; bottom: 28px; z-index: 2; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,248,225,0.5); background: rgba(255,248,225,0.15); color: #FFF8E1; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+    .story-nav.prev { right: 80px; }
+    .story-nav.next { right: 24px; }
+    @media (max-width: 768px) {
+      .story-sticky { align-items: flex-end; height: 92vh; }
+      .story-text { max-width: none; width: 100%; text-align: center; padding: 2.5rem 20px 2rem; background: linear-gradient(to top, rgba(7,63,60,0.92) 65%, transparent); }
+      .story-text h2 { text-align: center; }
+      .story-nav { bottom: auto; top: 38%; }
+      .story-nav.prev { left: 10px; right: auto; }
+      .story-nav.next { right: 10px; }
+    }
+    .wa-status { margin-top: 1rem; font-weight: 600; color: #3E2723; }
+    .wa-status a { color: #0f9e99; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-"><img src="mylogo.png" alt="Onyame Akyedie Studio logo" width="60" height="50"></span>
+        <h1>ONYAME AKYEDIE STUDIO</h1>
+        <p>Where Art Speaks Life</p>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Gallery</a></li>
+        <li><a href="#how">Order</a></li>
+        <li><a href="#booking">Book</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero fade-in">
+    <div class="container">
+      <div class="hero-content">
+        <span class="logo-"><img src="mylogo.png" alt="Onyame Akyedie Studio logo" width="300" height="265"></span>
+        <h2>Art, Design and Printing That Speak for You</h2>
+        <p>From T-shirts and flyers to logos, banners and custom paintings, we turn your ideas into work you are proud to show, right here in Bolgatanga.</p>
+        <p>Tell us what you need on WhatsApp and we will send you a free quote.</p>
+        <div class="cta-buttons">
+          <a href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hello%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" class="btn primary">Get a Free Quote on WhatsApp</a>
+          <a href="#portfolio" class="btn secondary">View Our Work</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <canvas id="hero3d" aria-label="3D preview of a T-shirt, picture frame and stamp"></canvas>
+        <img src="Branding.png" alt="Onyame Akyedie Studio artwork" width="300" height="300" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="x-section">
+    <div class="x-wrap">
+      <h2>About Us</h2>
+      <p>Onyame Akyedie Studio is a creative studio in Bolgatanga, Ghana. We design, print and paint for businesses, churches, schools and individuals.</p>
+      <p>Whether you need a logo, a church flyer, T-shirts for your group or a painting for your wall, we work with you from the first idea to the finished product.</p>
+      <p>Message us, tell us what you have in mind, and we will send you a free quote.</p>
+      <img class="about-photo" src="gggg.jpg" alt="Our team" width="320" height="427">
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services-preview fade-in">
+    <div class="container">
+      <h2>Our Creative Services</h2>
+      <p class="subtitle">Choose a service and message us on WhatsApp for a free quote.</p>
+      <!-- EDIT: replace each GH₵ ___ with your real starting price -->
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <span class="icon">🎨</span>
+          <h3>Graphic Design</h3>
+          <p>Logos, branding, social media kits, UI/UX mockups</p>
+          <p class="x-price">From GH₵ ___</p>
+          <a class="x-order" href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hi%2C%20I%27m%20interested%20in%20graphic%20design." target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+        <div class="service-card fade-in">
+          <span class="icon">🖌️</span>
+          <h3>Painting</h3>
+          <p>Custom portraits, murals, abstract art commissions</p>
+          <p class="x-price">From GH₵ ___</p>
+          <a class="x-order" href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hi%2C%20I%27m%20interested%20in%20a%20painting." target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+        <div class="service-card fade-in">
+          <span class="icon">👕</span>
+          <h3>T-Shirt Printing</h3>
+          <p>Screen printing, DTG, custom designs for events & teams</p>
+          <p class="x-price">From GH₵ ___ per shirt</p>
+          <a class="x-order" href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hi%2C%20I%27m%20interested%20in%20T-shirt%20printing." target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+        <div class="service-card fade-in">
+          <span class="icon">🖨️</span>
+          <h3>Stamp Development</h3>
+          <p>Custom rubber & digital stamps for businesses & creatives</p>
+          <p class="x-price">From GH₵ ___</p>
+          <a class="x-order" href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hi%2C%20I%27m%20interested%20in%20a%20custom%20stamp." target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+        <div class="service-card fade-in">
+          <span class="icon">🖼️</span>
+          <h3>Picture Framing</h3>
+          <p>Premium framing services, from minimalist to ornate</p>
+          <p class="x-price">From GH₵ ___</p>
+          <a class="x-order" href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hi%2C%20I%27m%20interested%20in%20picture%20framing." target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+        <div class="service-card fade-in">
+          <span class="icon">🚩</span>
+          <h3>Banners & Posters</h3>
+          <p>Event banners, promotional posters, wall art prints</p>
+          <p class="x-price">From GH₵ ___</p>
+          <a class="x-order" href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hi%2C%20I%27m%20interested%20in%20banners%20or%20posters." target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+      </div>
+      <p class="x-also">We also design logos, brand kits, stickers, flyers and websites.</p>
+    </div>
+  </section>
+
+  <!-- Swipe story: swipe left or right to change the product -->
+  <section id="story3d" class="story">
+    <div class="story-sticky">
+      <canvas id="story-canvas" aria-label="3D products. Swipe left or right to change"></canvas>
+      <div class="story-dots">
+        <button class="on" data-i="0" aria-label="T-shirt"></button><button data-i="1" aria-label="Picture frame"></button><button data-i="2" aria-label="Stamp"></button><button data-i="3" aria-label="Banner"></button>
+      </div>
+      <p class="story-hint">Swipe left or right</p>
+      <div class="story-text">
+        <h2 id="st-title">Custom T-Shirt Printing</h2>
+        <p id="st-desc">Screen printing and DTG for teams, events and businesses.</p>
+        <a class="x-order" id="st-order" href="https://api.whatsapp.com/send?phone=233530184096" target="_blank" rel="noopener">Order on WhatsApp</a>
+      </div>
+      <button class="story-nav prev" aria-label="Previous product">&#8249;</button>
+      <button class="story-nav next" aria-label="Next product">&#8250;</button>
+    </div>
+  </section>
+
+  <!-- 3D Product Preview -->
+  <section id="products3d" class="x-section" style="background:#F8F9FA">
+    <div class="x-wrap">
+      <h2>See Your Product in 3D</h2>
+      <p class="subtitle">Scroll the page or drag to turn it around. Pick a product, then order it on WhatsApp.</p>
+      <div class="p3d">
+        <div class="p3d-tabs" id="p3d-tabs">
+          <button class="active" data-p="tshirt">T-Shirt</button>
+          <button data-p="frame">Picture Frame</button>
+          <button data-p="stamp">Stamp</button>
+          <button data-p="banner">Roll-up Banner</button>
+        </div>
+        <div class="p3d-stage">
+          <canvas id="p3d-canvas" aria-label="Interactive 3D product preview"></canvas>
+          <p class="p3d-msg" id="p3d-msg" hidden></p>
+        </div>
+        <div class="p3d-colors" id="p3d-colors"></div>
+        <p class="x-also">This is a preview. Your final colours and print may look slightly different.</p>
+        <p style="text-align:center;margin-top:1rem"><a class="x-order" id="p3d-order" href="https://api.whatsapp.com/send?phone=233530184096" target="_blank" rel="noopener">Order on WhatsApp</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio / Gallery -->
+  <section id="portfolio" class="portfolio fade-in">
+    <div class="container">
+      <h2>Our Gallery</h2>
+      <p class="subtitle">A look at work we have done. Tap any image to enlarge it.</p>
+
+      <div class="x-filters">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="flyers">Flyers & Posters</button>
+        <button data-filter="tshirts">T-Shirts</button>
+        <button data-filter="painting">Painting</button>
+        <button data-filter="branding">Branding</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-cat="flyers" data-title="Church flyer: youth meeting" data-desc="Flyer for a church youth meeting">
+          <img src="ggg3.jpg" alt="Church youth meeting flyer" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="tshirts" data-title="T-shirt design for festival" data-desc="Bold typography and color for a music event">
+          <img src="tprint6.jpeg" alt="T-shirt design for a festival" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="tshirts" data-title="T-shirt printing" data-desc="Custom T-shirt printing sample">
+          <img src="suite.jpg" alt="T-shirt printing sample" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="flyers" data-title="Social media poster" data-desc="Celebrating a new month">
+          <img src="december.png" alt="New month social media poster" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="flyers" data-title="Birthday flyer" data-desc="Little Angel's new age">
+          <img src="birthday3.jpg" alt="Birthday flyer" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="branding" data-title="Book mockup" data-desc="Power of the Mind book cover">
+          <img src="file.jpg" alt="Book cover mockup" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="branding" data-title="Book mockup" data-desc="Power of the Mind, second view">
+          <img src="file1.jpg" alt="Book cover mockup, second view" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="branding" data-title="Book mockup" data-desc="Power of the Mind, third view">
+          <img src="file2.jpg" alt="Book cover mockup, third view" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="branding" data-title="Branding" data-desc="Public display of your company">
+          <img src="branding%203.jpg" alt="Branding design" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="branding" data-title="Branding" data-desc="Public display of your company, second view">
+          <img src="branding%202.jpg" alt="Branding design, second view" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="flyers" data-title="Happy Father's Day" data-desc="Celebrating Father's Day">
+          <img src="father.jpg" alt="Father's Day flyer" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="flyers" data-title="Wedding flyer" data-desc="Celebrating the wedding couple">
+          <img src="weds.jpeg" alt="Wedding flyer" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="painting" data-title="Room painting" data-desc="A beautifully decorated room">
+          <img src="paint.jpg" alt="Painted room" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+        <div class="portfolio-item" data-cat="flyers" data-title="Poster for church event" data-desc="Elegant design with calligraphy and floral elements">
+          <img src="bible%20study.jpg" alt="Bible study poster" loading="lazy" />
+          <div class="overlay"><i class="fas fa-eye"></i></div>
+        </div>
+      </div>
+
+      <h2>Our Work in Action</h2>
+      <div class="x-videos">
+        <video controls preload="metadata"><source src="print.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+        <video controls preload="metadata"><source src="paint.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to order -->
+  <section id="how" class="x-section">
+    <div class="x-wrap">
+      <h2>How to Order</h2>
+      <p class="subtitle">Simple steps from idea to finished job</p>
+      <div class="x-grid">
+        <div class="x-box"><h3>1. Tell us what you need</h3><p>Message us on WhatsApp or fill the booking form with your idea, quantity and date needed.</p></div>
+        <div class="x-box"><h3>2. Approve the design</h3><p>We send you a design or quote. We make changes until you are happy.</p></div>
+        <div class="x-box"><h3>3. Pay and collect</h3><p>Pay your deposit to start. Collect at our shop or ask about delivery.</p></div>
+      </div>
+      <!-- EDIT the blanks below with your real details -->
+      <div class="x-grid">
+        <div class="x-box"><h3>Turnaround</h3><p>Most jobs are ready in __ days. Need it faster? Ask about rush orders.</p></div>
+        <div class="x-box"><h3>Payment</h3><p>Mobile Money or cash. A deposit of __% starts your order.</p></div>
+        <div class="x-box"><h3>Delivery</h3><p>Pickup at our shop in Bolgatanga. Delivery: __ (ask us).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  TESTIMONIALS: remove this comment markers once you have REAL customer quotes (with their permission).
+  <section id="reviews" class="x-section">
+    <div class="x-wrap">
+      <h2>What Our Customers Say</h2>
+      <div class="x-grid">
+        <div class="x-box"><p>"Paste a real customer message here."</p><p><strong>Customer name, business or church</strong></p></div>
+        <div class="x-box"><p>"Paste a real customer message here."</p><p><strong>Customer name, business or church</strong></p></div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- FAQ -->
+  <section id="faq" class="x-section">
+    <div class="x-wrap x-faq">
+      <h2>Frequently Asked Questions</h2>
+      <!-- EDIT the answers so they match how you really work -->
+      <details><summary>Do you take small and bulk orders?</summary><p>Yes. Message us with your quantity and we will send a price.</p></details>
+      <details><summary>Can I bring my own design?</summary><p>Yes. Send it on WhatsApp. High-resolution files (PNG, JPG, PDF) print best.</p></details>
+      <details><summary>Can you design it for me?</summary><p>Yes. Tell us your idea, colors and text, and we will create it.</p></details>
+      <details><summary>Do you do rush jobs?</summary><p>Often yes. Tell us your deadline when you message us.</p></details>
+      <details><summary>Where are you located?</summary><p>Zorkor Market, Bolgatanga, near the Kandoo Station.</p></details>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking" class="booking-section fade-in">
+    <div class="container">
+      <h2>Book Your Creative Session</h2>
+      <p class="subtitle">Tell us about your project and your preferred date. Your request opens in WhatsApp so we can reply quickly.</p>
+      <form id="booking-form" class="booking-form">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="form-group">
+          <label for="service">Service Needed *</label>
+          <select id="service" name="service" required>
+            <option value="">-- Select Service --</option>
+            <option value="graphic">Graphic Design</option>
+            <option value="painting">Painting</option>
+            <option value="tshirt">T-Shirt Printing</option>
+            <option value="stamp">Stamp Development</option>
+            <option value="framing">Picture Framing</option>
+            <option value="banner">Banners & Posters</option>
+            <option value="other">Other (Specify Below)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" />
+        </div>
+        <div class="form-group">
+          <label for="message">Project Details *</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn primary">Send Booking on WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section fade-in">
+    <div class="container">
+      <h2>Let’s Create Together</h2>
+      <p class="subtitle">Have a question or need a quote? Send us a message and we will reply as soon as we can.</p>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Zorkor Market, near the Kandoo Station, Bolgatanga, Upper East, Ghana</p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+233530184096">+233 53 018 4096</a><br><a href="tel:+233500997715">+233 50 099 7715</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:onyameakyedie09@gmail.com">onyameakyedie09@gmail.com</a></p>
+          <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://api.whatsapp.com/send?phone=233530184096" target="_blank" rel="noopener">Chat Now</a></p>
+          <p><i class="fas fa-clock"></i> Open: Mon to Sat, __ am to __ pm</p>
+
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61581384123399" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com/@francisakyedie-p5q?si=QlRvp3GZIYz03r44" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <!-- Add Instagram and TikTok here once you have the real links:
+            <a href="YOUR_INSTAGRAM_URL" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="YOUR_TIKTOK_URL" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a> -->
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="cname">Name *</label>
+            <input type="text" id="cname" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="cemail">Email *</label>
+            <input type="email" id="cemail" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="csubject">Subject</label>
+            <input type="text" id="csubject" name="subject" />
+          </div>
+          <div class="form-group">
+            <label for="cmessage">Message *</label>
+            <textarea id="cmessage" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn primary">Send on WhatsApp</button>
+        </form>
+      </div>
+
+      <div class="x-map">
+        <iframe title="Map to Onyame Akyedie Studio, Zorkor Market, Bolgatanga" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Zorkor+Market+Bolgatanga+Ghana&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>ONYAME AKYEDIE STUDIO</h2>
+          <p>Where Art Speaks Life</p>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Gallery</a></li>
+            <li><a href="#how">How to Order</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hello%20Onyame%20Akyedie%20Studio%2C%20I%20need%20help%20with%20an%20order." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://youtube.com/@francisakyedie-p5q?si=QlRvp3GZIYz03r44" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://www.facebook.com/profile.php?id=61581384123399" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Onyame Akyedie Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://api.whatsapp.com/send?phone=233530184096&amp;text=Hello%20Onyame%20Akyedie%20Studio%2C%20I%20need%20help%20with%20an%20order." target="_blank" rel="noopener" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat with Us</span>
+  </a>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <span class="close">&times;</span>
+      <img id="lightbox-img" src="" alt="Portfolio item" />
+      <div class="lightbox-caption">
+        <h3 id="lightbox-title">Title</h3>
+        <p id="lightbox-desc">Description</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Gallery filter buttons
+    document.querySelectorAll('.x-filters button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = btn.getAttribute('data-filter');
+        document.querySelectorAll('.x-filters button').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        document.querySelectorAll('.portfolio-item').forEach(function (item) {
+          item.style.display = (f === 'all' || item.getAttribute('data-cat') === f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+(function () {
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ========== 1. 3D PRODUCTS (hero + product preview) ========== */
+  if (window.THREE) {
+    var useTex = location.protocol !== 'file:'; // pictures load only when the site is hosted
+    var loader = new THREE.TextureLoader(), cache = {};
+    var stages = [];
+
+    var loadTex = function (url, cb) {
+      if (!useTex) return;
+      if (cache[url]) { cb(cache[url]); return; }
+      loader.load(url, function (t) { t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; cache[url] = t; cb(t); });
+    };
+    var mat = function (c, r, m) { return new THREE.MeshStandardMaterial({ color: c, roughness: r == null ? 0.8 : r, metalness: m || 0 }); };
+    var box = function (w, h, d, material, x, y, z) {
+      var m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), material);
+      m.position.set(x || 0, y || 0, z || 0);
+      return m;
+    };
+    var decal = function (url, w, h, x, y, z, parent) {
+      loadTex(url, function (t) {
+        var s = Math.min(w / t.image.width, h / t.image.height);
+        var m = new THREE.Mesh(new THREE.PlaneGeometry(t.image.width * s, t.image.height * s),
+          new THREE.MeshBasicMaterial({ map: t, transparent: true }));
+        m.position.set(x, y, z);
+        parent.add(m);
+      });
+    };
+
+    var builders = {
+      tshirt: function (g, c) {
+        var s = new THREE.Shape();
+        s.moveTo(-0.45, 1.5); s.lineTo(-1.2, 1.3); s.lineTo(-2, 0.6); s.lineTo(-1.65, 0.2); s.lineTo(-1.15, 0.6);
+        s.lineTo(-1.15, -1.6); s.lineTo(1.15, -1.6); s.lineTo(1.15, 0.6); s.lineTo(1.65, 0.2); s.lineTo(2, 0.6);
+        s.lineTo(1.2, 1.3); s.lineTo(0.45, 1.5); s.quadraticCurveTo(0, 0.9, -0.45, 1.5);
+        var geo = new THREE.ExtrudeGeometry(s, { depth: 0.3, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.05, bevelSegments: 2 });
+        geo.translate(0, 0, -0.15);
+        g.add(new THREE.Mesh(geo, mat(c, 0.9)));
+        decal('tshirt-print.png', 1.6, 1.6, 0, 0.1, 0.21, g);
+      },
+      frame: function (g) {
+        var gold = mat(0xc8a02c, 0.35, 0.6);
+        g.add(box(3, 0.25, 0.3, gold, 0, 1.675, 0), box(3, 0.25, 0.3, gold, 0, -1.675, 0),
+              box(0.25, 3.6, 0.3, gold, -1.375, 0, 0), box(0.25, 3.6, 0.3, gold, 1.375, 0, 0),
+              box(2.5, 3.1, 0.1, mat(0xf3e9d2, 0.9), 0, 0, -0.05));
+        decal('flyer-nancy.jpg', 2.4, 2.95, 0, 0, 0.01, g);
+      },
+      stamp: function (g) {
+        var wood = mat(0x7b3f1e, 0.35), dark = mat(0x111111, 0.15, 0.1);
+        var collar = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.45, 0.14, 32), dark); collar.position.y = 0.42;
+        var neck = new THREE.Mesh(new THREE.CylinderGeometry(0.27, 0.3, 0.35, 32), mat(0x4a2512, 0.4)); neck.position.y = 0.66;
+        var knob = new THREE.Mesh(new THREE.SphereGeometry(0.62, 40, 24), dark); knob.position.y = 1.15;
+        g.add(box(2.2, 0.7, 1.3, wood, 0, 0, 0), box(2, 0.08, 1.1, mat(0x1a1a1a, 0.7), 0, -0.38, 0), collar, neck, knob);
+      },
+      banner: function (g) {
+        var metal = mat(0xb0bec5, 0.4, 0.6);
+        g.add(box(2, 0.2, 0.6, metal, 0, -2, 0), box(1.7, 3.7, 0.05, mat(0xffffff, 0.8), 0, 0, 0), box(1.8, 0.1, 0.12, metal, 0, 1.9, 0));
+        decal('banner-art.jpg', 1.64, 3.64, 0, 0, 0.035, g);
+      }
+    };
+
+    var makeItem = function (name, color) {
+      var holder = new THREE.Group(), pivot = new THREE.Group();
+      builders[name](pivot, color);
+      var c = new THREE.Box3().setFromObject(pivot).getCenter(new THREE.Vector3());
+      pivot.position.copy(c.negate());
+      holder.add(pivot);
+      return holder;
+    };
+    var disposeChildren = function (g) {
+      while (g.children.length) {
+        var o = g.children[0];
+        g.remove(o);
+        o.traverse(function (n) { if (n.geometry) n.geometry.dispose(); if (n.material) n.material.dispose(); });
+      }
+    };
+
+    var makeStage = function (canvas, onFrame, onResize) {
+      var renderer;
+      try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      var scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+      camera.position.set(0, 0.3, 9.5);
+      scene.add(new THREE.HemisphereLight(0xffffff, 0x8890a0, 0.95));
+      var key = new THREE.DirectionalLight(0xffffff, 0.8);
+      key.position.set(3, 5, 6);
+      scene.add(key);
+      var st = { scene: scene, camera: camera, renderer: renderer, visible: true, onFrame: onFrame };
+      var resize = function () {
+        var w = canvas.clientWidth, h = canvas.clientHeight;
+        if (!w || !h) return;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        if (onResize) onResize(camera.aspect, camera);
+      };
+      window.addEventListener('resize', resize);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { st.visible = es[0].isIntersecting; if (st.visible) resize(); }).observe(canvas);
+      }
+      st.resize = resize;
+      stages.push(st);
+      return st;
+    };
+
+    /* ----- Hero: floating products that follow your finger or mouse ----- */
+    var heroCanvas = document.getElementById('hero3d');
+    if (heroCanvas) {
+      var items = [], group = new THREE.Group(), tx = 0, ty = 0, cx = 0, cy = 0;
+      var hero = makeStage(heroCanvas, function (t) {
+        cx += (tx - cx) * 0.06; cy += (ty - cy) * 0.06;
+        group.rotation.y = cx * 0.6 + (calm ? 0 : Math.sin(t * 0.5) * 0.25);
+        group.rotation.x = cy * 0.3;
+        items.forEach(function (it) {
+          it.o.position.y = it.y + (calm ? 0 : Math.sin(t * 1.2 + it.ph) * 0.15);
+          if (it.spin && !calm) it.o.rotation.y = t * 0.4 * it.spin;
+        });
+      }, function (aspect, camera) {
+        var narrow = aspect < 1.25; // phones: show only the T-shirt so it stays big
+        items[1].o.visible = items[2].o.visible = !narrow;
+        camera.position.set(0, 0.2, narrow ? 9.5 : 12.5);
+      });
+      if (hero) {
+        [['tshirt', 0x0f9e99, 0, 0, 1, 0, 0], ['frame', 0, -3.4, 0.3, 0.5, 1, 1.5], ['stamp', 0, 3.4, -0.3, 0.5, -1, 3]].forEach(function (d) {
+          var o = makeItem(d[0], d[1]);
+          o.position.set(d[2], d[3], 0);
+          o.scale.setScalar(d[4]);
+          group.add(o);
+          items.push({ o: o, y: d[3], spin: d[5], ph: d[6] });
+        });
+        hero.scene.add(group);
+        heroCanvas.parentNode.classList.add('on3d');
+        window.addEventListener('pointermove', function (e) {
+          var r = heroCanvas.getBoundingClientRect();
+          tx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (window.innerWidth / 2)));
+          ty = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (window.innerHeight / 2)));
+        }, { passive: true });
+        hero.resize();
+      }
+    }
+
+    /* ----- Product preview: turns as you scroll, or drag it ----- */
+    var canvas = document.getElementById('p3d-canvas');
+    if (canvas) {
+      var msg = document.getElementById('p3d-msg'), colorsEl = document.getElementById('p3d-colors');
+      var orderEl = document.getElementById('p3d-order'), sec = document.getElementById('products3d');
+      var names = { tshirt: 'custom T-shirt', frame: 'picture frame', stamp: 'custom stamp', banner: 'roll-up banner' };
+      var palette = [['white', 0xf5f5f5], ['black', 0x1a1a1a], ['red', 0xc62828], ['blue', 0x1565c0], ['yellow', 0xfdd835], ['green', 0x2e7d32]];
+      var current = 'tshirt', colorIdx = 0, ang = 0, drag = 0, dragging = false, lastX = 0;
+      var root = new THREE.Group();
+
+      var prod = makeStage(canvas, function () {
+        var r = sec.getBoundingClientRect();
+        var p = Math.max(0, Math.min(1, (window.innerHeight - r.top) / (window.innerHeight + r.height)));
+        ang += ((calm ? 0 : p * Math.PI * 2) - ang) * 0.12;
+        root.rotation.y = 0.4 + ang + drag;
+      });
+
+      if (!prod) {
+        msg.hidden = false; msg.textContent = '3D preview is not supported on this device.';
+      } else {
+        prod.scene.add(root);
+        var build = function () {
+          disposeChildren(root);
+          root.add(makeItem(current, palette[colorIdx][1]));
+          colorsEl.innerHTML = '';
+          if (current === 'tshirt') {
+            palette.forEach(function (p, i) {
+              var b = document.createElement('button');
+              b.style.background = '#' + ('000000' + p[1].toString(16)).slice(-6);
+              b.setAttribute('aria-label', p[0]);
+              if (i === colorIdx) b.className = 'active';
+              b.onclick = function () { colorIdx = i; build(); };
+              colorsEl.appendChild(b);
+            });
+          }
+          var what = (current === 'tshirt' ? palette[colorIdx][0] + ' ' : '') + names[current];
+          orderEl.href = 'https://api.whatsapp.com/send?phone=233530184096&text=' +
+            encodeURIComponent('Hello Onyame Akyedie Studio, I am interested in a ' + what + '.');
+          orderEl.textContent = 'Order this ' + names[current] + ' on WhatsApp';
+        };
+        document.querySelectorAll('#p3d-tabs button').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            document.querySelectorAll('#p3d-tabs button').forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            current = btn.getAttribute('data-p'); colorIdx = 0; build();
+          });
+        });
+        canvas.addEventListener('pointerdown', function (e) { dragging = true; lastX = e.clientX; canvas.setPointerCapture(e.pointerId); });
+        canvas.addEventListener('pointermove', function (e) { if (dragging) { drag += (e.clientX - lastX) * 0.01; lastX = e.clientX; } });
+        var stop = function () { dragging = false; };
+        canvas.addEventListener('pointerup', stop);
+        canvas.addEventListener('pointercancel', stop);
+        prod.resize();
+        build();
+      }
+    }
+
+    /* ----- Swipe story: swipe left or right to change the product ----- */
+    var storySec = document.getElementById('story3d'), storyCanvas = document.getElementById('story-canvas');
+    if (storySec && storyCanvas) {
+      var chapters = [
+        { k: 'tshirt', c: 0xf5f5f5, t: 'Custom T-Shirt Printing', d: 'Screen printing and DTG for teams, events and businesses.', w: 'custom T-shirt printing' },
+        { k: 'frame', c: 0, t: 'Picture Framing', d: 'Premium framing, from minimalist to ornate.', w: 'picture framing' },
+        { k: 'stamp', c: 0, t: 'Custom Stamps', d: 'Rubber and digital stamps for businesses and creatives.', w: 'a custom stamp' },
+        { k: 'banner', c: 0, t: 'Banners & Posters', d: 'Event banners, promotional posters and wall art prints.', w: 'banners and posters' }
+      ];
+      var sGroup = new THREE.Group(), sItems = [], pos = 0, target = 0, shown = -1;
+      var textEl = storySec.querySelector('.story-text'), titleEl = document.getElementById('st-title');
+      var descEl = document.getElementById('st-desc'), sOrder = document.getElementById('st-order');
+      var dots = storySec.querySelectorAll('.story-dots button'), hintEl = storySec.querySelector('.story-hint');
+
+      var setChapter = function (i) {
+        var first = shown === -1;
+        shown = i;
+        var apply = function () {
+          titleEl.textContent = chapters[i].t;
+          descEl.textContent = chapters[i].d;
+          sOrder.href = 'https://api.whatsapp.com/send?phone=233530184096&text=' +
+            encodeURIComponent('Hello Onyame Akyedie Studio, I am interested in ' + chapters[i].w + '.');
+          dots.forEach(function (d, j) { d.classList.toggle('on', j === i); });
+          textEl.classList.remove('out');
+        };
+        if (first) { apply(); } else { textEl.classList.add('out'); setTimeout(apply, 160); }
+      };
+      var goTo = function (i) {
+        target = Math.max(0, Math.min(chapters.length - 1, i));
+        hintEl.style.opacity = 0;
+      };
+
+      var story = makeStage(storyCanvas, function (t) {
+        pos += (target - pos) * 0.14;
+        sItems.forEach(function (o, i) {
+          var dd = pos - i, ad = Math.abs(dd);
+          o.visible = ad < 0.9;
+          o.position.x = -Math.sign(dd) * ad * ad * 28; // the next product slides in from the side
+          o.scale.setScalar(1 - Math.min(ad, 0.6) * 0.8);
+          o.rotation.y = -dd * Math.PI * 2 + (calm ? 0 : Math.sin(t * 0.8) * 0.35);
+        });
+        var idx = Math.min(chapters.length - 1, Math.max(0, Math.round(pos)));
+        if (idx !== shown) setChapter(idx);
+      }, function (aspect, camera) {
+        var narrow = aspect < 1;
+        camera.position.set(0, 0.2, Math.max(10, 5 / (0.63 * aspect))); // keeps the product inside narrow screens
+        sGroup.position.set(narrow ? 0 : 2.4, narrow ? 1.3 : 0, 0);     // text on the left (or bottom on phones)
+      });
+
+      if (story) {
+        chapters.forEach(function (c) {
+          var o = makeItem(c.k, c.c);
+          sGroup.add(o);
+          sItems.push(o);
+        });
+        story.scene.add(sGroup);
+        setChapter(0);
+
+        // Swipe left or right (or drag with a mouse)
+        var sDown = false, sDrag = false, sx = 0, sy = 0, spos = 0, svx = 0, slx = 0, slt = 0;
+        storySec.addEventListener('pointerdown', function (e) {
+          if (e.target.closest('a, button')) return;
+          sDown = true; sDrag = false; sx = slx = e.clientX; sy = e.clientY; spos = pos; svx = 0; slt = performance.now();
+        });
+        storySec.addEventListener('pointermove', function (e) {
+          if (!sDown) return;
+          var dx = e.clientX - sx, dy = e.clientY - sy;
+          if (!sDrag) {
+            if (Math.abs(dx) < 8 || Math.abs(dx) < Math.abs(dy)) return;
+            sDrag = true;
+            storySec.setPointerCapture(e.pointerId);
+            hintEl.style.opacity = 0;
+          }
+          var now = performance.now();
+          svx = (e.clientX - slx) / Math.max(1, now - slt);
+          slx = e.clientX; slt = now;
+          pos = Math.max(-0.35, Math.min(chapters.length - 0.65, spos - dx / (Math.max(280, storyCanvas.clientWidth) * 0.45)));
+          target = pos;
+        });
+        var sRelease = function () {
+          if (!sDown) return;
+          sDown = false;
+          if (!sDrag) return;
+          sDrag = false;
+          var flick = Math.abs(svx) > 0.4;
+          goTo(flick ? Math.round(spos) + (svx < 0 ? 1 : -1) : Math.round(pos));
+        };
+        storySec.addEventListener('pointerup', sRelease);
+        storySec.addEventListener('pointercancel', sRelease);
+
+        // Arrow buttons and dots
+        storySec.querySelector('.story-nav.next').addEventListener('click', function () { goTo(Math.round(target) + 1); });
+        storySec.querySelector('.story-nav.prev').addEventListener('click', function () { goTo(Math.round(target) - 1); });
+        dots.forEach(function (d, j) { d.addEventListener('click', function () { goTo(j); }); });
+
+        storySec.classList.add('on');
+        story.resize();
+      }
+    }
+
+    var tick = function (t) {
+      requestAnimationFrame(tick);
+      stages.forEach(function (s) {
+        if (!s.visible) return;
+        s.onFrame(t / 1000);
+        s.renderer.render(s.scene, s.camera);
+      });
+    };
+    if (stages.length) tick(0);
+  } else {
+    var m = document.getElementById('p3d-msg');
+    if (m) { m.hidden = false; m.textContent = 'The 3D preview could not load. Please check your internet connection.'; }
+  }
+
+  /* ========== 2. SMOOTH MOTION: parallax and gentle reveals ========== */
+  if (!calm) {
+    var a = document.querySelector('.hero-content'), b = document.querySelector('.hero-image'), busy = false;
+    window.addEventListener('scroll', function () {
+      if (busy) return;
+      busy = true;
+      requestAnimationFrame(function () {
+        busy = false;
+        var y = Math.min(window.pageYOffset, 900);
+        if (a) a.style.transform = 'translate3d(0,' + (-y * 0.04) + 'px,0)';
+        if (b) b.style.transform = 'translate3d(0,' + (y * 0.1) + 'px,0)';
+      });
+    }, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target;
+          io.unobserve(el);
+          el.classList.add('in');
+          setTimeout(function () { el.classList.remove('rv', 'in'); el.style.transitionDelay = ''; }, 1000);
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.portfolio-item, .x-box, .x-faq details, .x-filters, .p3d').forEach(function (el, i) {
+        el.classList.add('rv');
+        el.style.transitionDelay = ((i % 4) * 90) + 'ms';
+        io.observe(el);
+      });
+    }
+  }
+})();
+  </script>
+</body>
+</html>
